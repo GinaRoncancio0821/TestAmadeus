@@ -1,0 +1,65 @@
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="activity">Activity</label>
+          <input
+            type="text"
+            class="form-control"
+            id="activity"
+            required
+            [(ngModel)]="note.activity"
+            name="activity"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="idStudent">IdStudent</label>
+          <input
+            class="form-control"
+            id="idStudent"
+            required
+            [(ngModel)]="note.idStudent"
+            name="idStudent"
+          />
+        </div>
+        <div class="form-group">
+            <label for="idProgram">IdProgram</label>
+            <input
+              class="form-control"
+              id="idProgram"
+              required
+              [(ngModel)]="note.idProgram"
+              name="idProgram"
+            />
+          </div>
+          <div class="form-group">
+            <label for="note1">Note</label>
+            <input
+              class="form-control"
+              id="note1"
+              required
+              [(ngModel)]="note.note1"
+              name="note1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input
+              class="form-control"
+              id="date"
+              required
+              [(ngModel)]="note.date"
+              name="Date"
+            />
+          </div>
+  
+        <button (click)="createNote()" class="btn btn-success">Create</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h3>You successfully created a note</h3>
+        <button class="btn btn-success" (click)="newNote()">New..</button>
+      </div>
+    </div>
+  </div>

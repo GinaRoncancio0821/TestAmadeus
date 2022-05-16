@@ -1,0 +1,50 @@
+<div class="list row">
+    
+    <div class="col-md-6">
+      <h4>Product List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let note of notes; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setCurrentNote(note, i)"
+        >
+     
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentNotes">
+        <h4>Notes</h4>
+        <div>
+          <label><strong>Activity:</strong></label> 
+        </div>
+        <div>
+          <label><strong>IdStudent:</strong></label>
+  
+        </div>
+        <div>
+          <label><strong>IdProgram:</strong></label>
+  
+        </div>
+        <div>
+            <label><strong>Note1:</strong></label>
+    
+          </div>
+          <div>
+            <label><strong>Date:</strong></label>
+    
+          </div>
+  
+        <a class="badge badge-warning" routerLink="/Notes/">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentNotes">
+        <br />
+        <p>Please click on a notes</p>
+      </div>
+    </div>
+  </div>
